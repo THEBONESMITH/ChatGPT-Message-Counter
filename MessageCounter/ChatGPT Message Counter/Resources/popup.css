@@ -1,15 +1,47 @@
-:root {
-    color-scheme: light dark;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Message Counter</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
 
-body {
-    width: 100px;
-    padding: 10px;
+        body {
+            width: 200px; /* Adjust width as needed */
+            padding: 10px;
+            font-family: system-ui;
+            text-align: center;
+        }
 
-    font-family: system-ui;
-    text-align: center;
-}
+        #counter {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
 
-@media (prefers-color-scheme: dark) {
-    /* Dark Mode styles go here. */
-}
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #333;
+                color: #fff;
+            }
+            /* Further dark mode styles go here */
+        }
+    </style>
+</head>
+<body>
+    <div id="counter">Messages sent: <span id="messageCount">0</span></div>
+    <script>
+        // The script here would request the message count from the background script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Send a message to the background script to get the current count
+            browser.runtime.sendMessage({ action: 'getCount' }).then(response => {
+                // Update the popup's display with the current count
+                document.getElementById('messageCount').textContent = response.count;
+            }).catch(error => {
+                console.error('Error getting message count:', error);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -15,8 +15,6 @@
 		E1A85BEB2BB8532D00C2F3F8 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = E1A85BEA2BB8532D00C2F3F8 /* _locales */; };
 		E1A85BED2BB8532D00C2F3F8 /* images in Resources */ = {isa = PBXBuildFile; fileRef = E1A85BEC2BB8532D00C2F3F8 /* images */; };
 		E1A85BEF2BB8532D00C2F3F8 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = E1A85BEE2BB8532D00C2F3F8 /* manifest.json */; };
-		E1A85BF12BB8532D00C2F3F8 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = E1A85BF02BB8532D00C2F3F8 /* background.js */; };
-		E1A85BF52BB8532D00C2F3F8 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = E1A85BF42BB8532D00C2F3F8 /* popup.html */; };
 		E1A85BF72BB8532D00C2F3F8 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = E1A85BF62BB8532D00C2F3F8 /* popup.css */; };
 		E1A85BF92BB8532D00C2F3F8 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = E1A85BF82BB8532D00C2F3F8 /* popup.js */; };
 		E1A85BFE2BB8532D00C2F3F8 /* ChatGPT Message Counter.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E1A85BE52BB8532D00C2F3F8 /* ChatGPT Message Counter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -60,9 +58,6 @@
 		E1A85BEA2BB8532D00C2F3F8 /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _locales; sourceTree = "<group>"; };
 		E1A85BEC2BB8532D00C2F3F8 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		E1A85BEE2BB8532D00C2F3F8 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
-		E1A85BF02BB8532D00C2F3F8 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = background.js; sourceTree = "<group>"; };
-		E1A85BF22BB8532D00C2F3F8 /* content.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = content.js; sourceTree = "<group>"; };
-		E1A85BF42BB8532D00C2F3F8 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = popup.html; sourceTree = "<group>"; };
 		E1A85BF62BB8532D00C2F3F8 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
 		E1A85BF82BB8532D00C2F3F8 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
 		E1A85BFA2BB8532D00C2F3F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -140,9 +135,6 @@
 				E1A85BEA2BB8532D00C2F3F8 /* _locales */,
 				E1A85BEC2BB8532D00C2F3F8 /* images */,
 				E1A85BEE2BB8532D00C2F3F8 /* manifest.json */,
-				E1A85BF02BB8532D00C2F3F8 /* background.js */,
-				E1A85BF22BB8532D00C2F3F8 /* content.js */,
-				E1A85BF42BB8532D00C2F3F8 /* popup.html */,
 				E1A85BF62BB8532D00C2F3F8 /* popup.css */,
 				E1A85BF82BB8532D00C2F3F8 /* popup.js */,
 			);
@@ -239,9 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1A85BF12BB8532D00C2F3F8 /* background.js in Resources */,
 				E1A85BF72BB8532D00C2F3F8 /* popup.css in Resources */,
-				E1A85BF52BB8532D00C2F3F8 /* popup.html in Resources */,
 				E1A85BED2BB8532D00C2F3F8 /* images in Resources */,
 				E1A85C062BB85B0000C2F3F8 /* content.js in Resources */,
 				E1A85BEF2BB8532D00C2F3F8 /* manifest.json in Resources */,

@@ -1,26 +1,36 @@
-let messageCounter = safari.extension.settings.messageCounter || 0;
-let startTime = safari.extension.settings.startTime || new Date().getTime();
+//backgound.js
+
+// Initialize or retrieve the message counter and the start time
+let messageCounter = parseInt(localStorage.getItem('messageCounter') || 0, 10);
+let startTime = parseInt(localStorage.getItem('startTime') || Date.now(), 10);
 
 function resetCounterIfNecessary() {
-    const now = new Date().getTime();
+    const now = Date.now();
     if (now - startTime >= 10800000) { // 3 hours in milliseconds
         messageCounter = 0;
         startTime = now;
-        safari.extension.settings.messageCounter = 0;
-        safari.extension.settings.startTime = now;
+        localStorage.setItem('messageCounter', messageCounter.toString());
+        localStorage.setItem('startTime', startTime.toString());
     }
 }
 
 // Listen for messages from the content script
-safari.application.addEventListener('message', function(event) {
-    if (event.name === 'messageSent') {
+browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.message === 'messageSent') {
         resetCounterIfNecessary();
         messageCounter++;
-        safari.extension.settings.messageCounter = messageCounter;
-        // No need to send back a message if you're only updating the counter in the background.
-    } else if (event.name === 'getCount') {
-        resetCounterIfNecessary();
-        // Send the current count to the popover
-        event.target.page.dispatchMessage('updateCount', messageCounter);
+        localStorage.setItem('messageCounter', messageCounter.toString());
+        // Send the updated count back to the sender
+        sendResponse({ counter: messageCounter });
+        return true; // Indicate that we will send a response asynchronously
     }
-}, false);
+    return false; // No need to return a response
+});
+
+// Optional: Add a listener to provide the current count to the popup
+browser.runtime.sendMessage({ message: 'getCount' }).then(response => {
+    document.getElementById('messageCount').textContent = response.counter;
+}).catch(error => {
+    console.error('Error getting message count:', error);
+});
+
