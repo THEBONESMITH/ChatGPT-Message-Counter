@@ -1,3 +1,5 @@
+/* popup */
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +16,7 @@
             font-family: system-ui;
             text-align: center;
         }
-
+    
         #counter {
             margin: 10px 0;
             font-size: 1.2rem;
@@ -30,16 +32,13 @@
     </style>
 </head>
 <body>
-    <div id="counter">Messages sent: <span id="messageCount">0</span></div>
+    <div id="counter">Messages sent: <span id="messageCounter">0</span></div>
     <script>
-        // The script here would request the message count from the background script
         document.addEventListener('DOMContentLoaded', function() {
-            // Send a message to the background script to get the current count
-            browser.runtime.sendMessage({ action: 'getCount' }).then(response => {
-                // Update the popup's display with the current count
-                document.getElementById('messageCount').textContent = response.count;
+            browser.runtime.sendMessage({ message: 'getCount' }).then(response => {
+                document.getElementById('messageCounter').textContent = response.counter;
             }).catch(error => {
-                console.error('Error getting message count:', error);
+                console.error('Error requesting count:', error);
             });
         });
     </script>

@@ -22,12 +22,13 @@
 
         // Request the current count when the popover is shown
         document.addEventListener('DOMContentLoaded', function() {
-            browser.runtime.sendMessage({ message: 'getCount' }).then(response => {
-                document.getElementById('count').textContent = response.counter;
+            browser.runtime.sendMessage({ action: 'getCount' }).then(response => {
+                document.getElementById('messageCount').textContent = response.count;
             }).catch(error => {
-                console.error('Error requesting count:', error);
+                console.error('Error getting message count:', error);
             });
         });
+
     </script>
 </body>
 </html>
