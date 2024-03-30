@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Message Counter</title>
+    <style>
+        body {
+            width: 200px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="counter">Messages sent: <span id="count">0</span></div>
+    <script>
+        // Listen for messages from the background script
+        safari.self.addEventListener('message', function(event) {
+            if (event.name === 'updateCount') {
+                document.getElementById('count').textContent = event.message;
+            }
+        });
+
+        // Request the current count when the popover is shown
+        document.addEventListener('DOMContentLoaded', function() {
+            safari.extension.dispatchMessage('getCount');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SFSafariToolbarItem</key>
+	<dict>
+		<key>ToolTip</key>
+		<string>Message Counter</string>
+		<key>Popover</key>
+		<string>popover.html</string>
+		<key>Label</key>
+		<string>Your desired label</string>
+	</dict>
+	<key>SFSafariContentScripts</key>
+	<array>
+		<dict>
+			<key>Blacklist</key>
+			<array/>
+			<key>Whitelist</key>
+			<array/>
+			<key>Item 0</key>
+			<string>https://chat.openai.com</string>
+			<key>Script</key>
+			<string>content.js</string>
+		</dict>
+	</array>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+	<key>SFSafariBackgroundScripts</key>
+	<array>
+		<string>background.js</string>
+	</array>
+	<key>NSExtension</key>
+	<dict>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.Safari.web-extension</string>
+		<key>NSExtensionPrincipalClass</key>
+		<string>$(PRODUCT_MODULE_NAME).SafariWebExtensionHandler</string>
+	</dict>
+</dict>
+</plist>
