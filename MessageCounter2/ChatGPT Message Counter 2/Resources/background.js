@@ -1,18 +1,30 @@
 // background.js
 let messageTimestamps = [];
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    const threeHoursAgo = Date.now() - (3 * 60 * 60 * 1000); // 3 hours in milliseconds
+function updateMessageTimestamps() {
+    const now = Date.now();
+    const threeHoursAgo = now - (3 * 60 * 60 * 1000);
+    // Filter out messages older than 3 hours
+    messageTimestamps = messageTimestamps.filter(timestamp => timestamp > threeHoursAgo);
+}
 
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.incrementCount) {
-        messageTimestamps.push(Date.now());
-        messageTimestamps = messageTimestamps.filter(timestamp => timestamp > threeHoursAgo);
-        console.log('Message count within the last 3 hours:', messageTimestamps.length);
-        sendResponse({ messageCount: 40 - messageTimestamps.length, nextReset: threeHoursAgo });
-    } else if (request.getCount) {
-        messageTimestamps = messageTimestamps.filter(timestamp => timestamp > threeHoursAgo);
-        console.log('Sending current count within the last 3 hours:', messageTimestamps.length);
-        sendResponse({ messageCount: 40 - messageTimestamps.length, nextReset: threeHoursAgo });
+        const now = Date.now();
+        messageTimestamps.push(now);
     }
-    return true; // Indicating an asynchronous response
+
+    updateMessageTimestamps(); // Clean up old timestamps
+
+    const messagesSentLast3Hours = messageTimestamps.length;
+    let nextUpdateInMinutes = 0;
+
+    if (messageTimestamps.length > 0) {
+        const oldestTimestamp = messageTimestamps[0];
+        const threeHoursFromFirstMessage = oldestTimestamp + (3 * 60 * 60 * 1000);
+        nextUpdateInMinutes = Math.ceil((threeHoursFromFirstMessage - Date.now()) / (60 * 1000));
+    }
+
+    sendResponse({ messagesSentLast3Hours, nextUpdateInMinutes });
+    return true; // Keep the message channel open for async response
 });
