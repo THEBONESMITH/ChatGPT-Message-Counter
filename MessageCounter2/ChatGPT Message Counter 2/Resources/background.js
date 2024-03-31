@@ -1,16 +1,18 @@
-// In background.js
-let messageCount = 0;
+// background.js
+let messageTimestamps = [];
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    const threeHoursAgo = Date.now() - (3 * 60 * 60 * 1000); // 3 hours in milliseconds
+
     if (request.incrementCount) {
-        messageCount++;
-        console.log('Message count incremented:', messageCount);
-        sendResponse({messageCount: messageCount});
-        return true; // Indicating asynchronous response (optional in this case since response is immediate)
+        messageTimestamps.push(Date.now());
+        messageTimestamps = messageTimestamps.filter(timestamp => timestamp > threeHoursAgo);
+        console.log('Message count within the last 3 hours:', messageTimestamps.length);
+        sendResponse({ messageCount: 40 - messageTimestamps.length, nextReset: threeHoursAgo });
     } else if (request.getCount) {
-        console.log('Sending current count:', messageCount);
-        sendResponse({messageCount: messageCount});
-        return true; // Ensure this line is present to handle the response correctly
+        messageTimestamps = messageTimestamps.filter(timestamp => timestamp > threeHoursAgo);
+        console.log('Sending current count within the last 3 hours:', messageTimestamps.length);
+        sendResponse({ messageCount: 40 - messageTimestamps.length, nextReset: threeHoursAgo });
     }
-    return false; // If neither incrementCount nor getCount, do nothing.
+    return true; // Indicating an asynchronous response
 });
