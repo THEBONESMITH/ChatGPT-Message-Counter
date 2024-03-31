@@ -18,14 +18,12 @@ function checkTypingStatus() {
     const timeSinceLastTyping = now - lastTypingTime;
     const timeSinceTypingStarted = now - typingStartTime;
 
-    // Scenario when typing has begun and it's been 5 to 45 seconds since last typing
     if (timeSinceTypingStarted >= 5000 && timeSinceLastTyping <= 45000) {
         if (!sendButtonClicked) {
             incrementCounter();
             resetTypingTracking();
         }
     } else if (timeSinceLastTyping > 45000 && timeSinceLastTyping <= 120000) {
-        // Wait for additional typing within two minutes
         if (additionalCharactersTyped >= 5) {
             if (!sendButtonClicked) {
                 incrementCounter();
@@ -35,7 +33,7 @@ function checkTypingStatus() {
     }
 }
 
-// Simulate message count increment
+// Function to increment the counter
 function incrementCounter() {
     console.log('Counter incremented due to typing activity.');
     chrome.runtime.sendMessage({incrementCount: true}, response => {
@@ -50,24 +48,38 @@ function incrementCounter() {
 // Set up event listener for typing activity
 document.addEventListener('input', event => {
     const now = Date.now();
-    if (!typingStartTime) typingStartTime = now; // Mark the start of typing
+    if (!typingStartTime) typingStartTime = now;
     lastTypingTime = now;
     additionalCharactersTyped++;
 
-    clearTimeout(typingTimer); // Clear existing timer
-    typingTimer = setTimeout(checkTypingStatus, 45000); // Set new timer
+    clearTimeout(typingTimer);
+    typingTimer = setTimeout(checkTypingStatus, 45000);
 
-    // Reset the send button clicked flag with each typing activity
     sendButtonClicked = false;
 });
 
-// Example log listener - adjust based on actual implementation
-console.log = (function(logFunc) {
-    return function() {
-        if (arguments[0] === "[Log] Send button clicked. (content.js, line 27)") {
+// Function to attach a listener to the send button
+function attachSendButtonListener() {
+    const sendButton = document.querySelector('button[data-testid="send-button"]');
+    if (sendButton) {
+        sendButton.addEventListener('click', () => {
+            console.log("[Log] Send button clicked.");
             sendButtonClicked = true;
             resetTypingTracking();
-        }
-        logFunc.apply(console, arguments);
-    };
-})(console.log);
+            // Directly increment the counter on send button click
+            incrementCounter();
+        });
+    } else {
+        console.warn("Send button not found.");
+    }
+}
+
+// Attempt to attach the send button listener immediately and on DOM changes
+attachSendButtonListener();
+const observer = new MutationObserver(mutations => {
+    attachSendButtonListener();
+});
+observer.observe(document.body, { childList: true, subtree: true });
+
+// Clean up observer on page unload
+window.addEventListener('unload', () => observer.disconnect());
