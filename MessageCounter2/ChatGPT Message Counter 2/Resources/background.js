@@ -1,25 +1,18 @@
-// background.js
-
+// In background.js
 let messageCount = 0;
 
-// On install, set up the initial state.
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.local.set({ messageCount: 0 });
-});
-
-// Listen for messages from content scripts.
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.incrementCount) {
-    // Increment the count and update storage.
-    messageCount++;
-    chrome.storage.local.set({ messageCount });
-    sendResponse({ messageCount });
-  } else if (request.getCount) {
-    // Respond with the current count.
-    chrome.storage.local.get("messageCount", (data) => {
-      sendResponse({ messageCount: data.messageCount || 0 });
-    });
-  }
-  return true; // Keep the messaging channel open for asynchronous response.
-});
+    if (request.incrementCount) {
+        // Increment your counter here
+        console.log('Incrementing message count');
+        // Let's pretend we increment a counter here
+        let newCount = ++messageCount; // Assuming messageCount is defined elsewhere
 
+        // Send the new count back to the sender
+        sendResponse({messageCount: newCount});
+
+        // Return true to indicate you're sending a response asynchronously
+        // (even if you actually send it right away, this is safe to do)
+        return true;
+    }
+});
