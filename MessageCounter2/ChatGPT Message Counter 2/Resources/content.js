@@ -1,39 +1,37 @@
+// content.js
 let typingStartTime = 0;
 let lastTypingTime = 0;
 let typingTimer;
-let additionalCharactersTyped = 0;
+let typedCharacters = 0; // Characters typed
+let pastedCharacters = 0; // Characters pasted, each paste action counts as 1
 let sendButtonClicked = false;
 
-// Function to reset typing tracking
+// Resets tracking variables and clears the timer
 function resetTypingTracking() {
     typingStartTime = 0;
     lastTypingTime = 0;
-    additionalCharactersTyped = 0;
+    typedCharacters = 0;
+    pastedCharacters = 0;
     clearTimeout(typingTimer);
 }
 
-// Function to check typing status and decide on incrementing the counter
+// Checks the typing status and decides on incrementing the counter
 function checkTypingStatus() {
     const now = Date.now();
     const timeSinceLastTyping = now - lastTypingTime;
     const timeSinceTypingStarted = now - typingStartTime;
 
-    if (timeSinceTypingStarted >= 5000 && timeSinceLastTyping <= 45000) {
-        if (!sendButtonClicked) {
+    // Adjusted condition: Requires at least two typed characters, not counting pastes
+    if (typedCharacters >= 2 && !sendButtonClicked) {
+        if ((timeSinceTypingStarted >= 5000 && timeSinceLastTyping <= 45000) ||
+            (pastedCharacters > 0 && typedCharacters + pastedCharacters >= 2)) {
             incrementCounter();
             resetTypingTracking();
-        }
-    } else if (timeSinceLastTyping > 45000 && timeSinceLastTyping <= 120000) {
-        if (additionalCharactersTyped >= 5) {
-            if (!sendButtonClicked) {
-                incrementCounter();
-                resetTypingTracking();
-            }
         }
     }
 }
 
-// Function to increment the counter
+// Increments the counter by sending a message to the background script
 function incrementCounter() {
     console.log('Counter incremented due to typing activity.');
     chrome.runtime.sendMessage({incrementCount: true}, response => {
@@ -45,20 +43,43 @@ function incrementCounter() {
     });
 }
 
-// Set up event listener for typing activity
-document.addEventListener('input', event => {
-    const now = Date.now();
-    if (!typingStartTime) typingStartTime = now;
-    lastTypingTime = now;
-    additionalCharactersTyped++;
+// Listens for typing, paste events, and Command-Enter to update character counts accordingly
+function setupInputListeners() {
+    document.addEventListener('keydown', event => {
+        // Check for Command-Enter combination
+        if (event.metaKey && event.key === 'Enter') {
+            console.log('Command-Enter pressed');
+            incrementCounter(); // Directly increment the message count
+            return; // Prevent further processing
+        }
 
-    clearTimeout(typingTimer);
-    typingTimer = setTimeout(checkTypingStatus, 45000);
+        const now = Date.now();
+        if (!typingStartTime) typingStartTime = now;
+        lastTypingTime = now;
+        typedCharacters++; // Increment for each keydown event
+        
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(checkTypingStatus, 45000); // Adjust timer to 45 seconds
+        
+        sendButtonClicked = false;
+    });
 
-    sendButtonClicked = false;
-});
+    document.addEventListener('paste', event => {
+        const now = Date.now();
+        if (!typingStartTime) typingStartTime = now;
+        lastTypingTime = now;
+        pastedCharacters = 1; // Treat each paste action as a single character increment
+        
+        clearTimeout(typingTimer);
+        // Do not automatically start the checkTypingStatus timer here
+        
+        sendButtonClicked = false;
+    });
+}
 
-// Function to attach a listener to the send button
+setupInputListeners();
+
+// Attaches a listener to the send button for click events
 function attachSendButtonListener() {
     const sendButton = document.querySelector('button[data-testid="send-button"]');
     if (sendButton) {
@@ -66,7 +87,6 @@ function attachSendButtonListener() {
             console.log("[Log] Send button clicked.");
             sendButtonClicked = true;
             resetTypingTracking();
-            // Directly increment the counter on send button click
             incrementCounter();
         });
     } else {
@@ -74,12 +94,11 @@ function attachSendButtonListener() {
     }
 }
 
-// Attempt to attach the send button listener immediately and on DOM changes
 attachSendButtonListener();
 const observer = new MutationObserver(mutations => {
     attachSendButtonListener();
 });
 observer.observe(document.body, { childList: true, subtree: true });
 
-// Clean up observer on page unload
+// Cleanup on page unload
 window.addEventListener('unload', () => observer.disconnect());

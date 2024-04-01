@@ -1,5 +1,5 @@
 // background.js
-
+// background.js
 const DURATION_MS = 3 * 60 * 60 * 1000; // 3 hours in milliseconds
 
 function updateMessageTimestamps() {
