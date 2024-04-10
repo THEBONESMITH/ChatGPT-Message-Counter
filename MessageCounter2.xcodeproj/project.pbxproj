@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E1078A5D2BB8E18F00C34E47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1078A5C2BB8E18F00C34E47 /* AppDelegate.swift */; };
+		E1078A5F2BB8E18F00C34E47 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1078A5E2BB8E18F00C34E47 /* ViewController.swift */; };
+		E1078A612BB8E19100C34E47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1078A602BB8E19100C34E47 /* Assets.xcassets */; };
+		E1078A642BB8E19100C34E47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1078A622BB8E19100C34E47 /* Main.storyboard */; };
+		E1078A722BB8E21900C34E47 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1078A712BB8E21900C34E47 /* SafariWebExtensionHandler.swift */; };
+		E1078A752BB8E21900C34E47 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = E1078A742BB8E21900C34E47 /* _locales */; };
+		E1078A772BB8E21900C34E47 /* images in Resources */ = {isa = PBXBuildFile; fileRef = E1078A762BB8E21900C34E47 /* images */; };
+		E1078A792BB8E21900C34E47 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = E1078A782BB8E21900C34E47 /* manifest.json */; };
+		E1078A7B2BB8E21900C34E47 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = E1078A7A2BB8E21900C34E47 /* background.js */; };
+		E1078A7D2BB8E21900C34E47 /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = E1078A7C2BB8E21900C34E47 /* content.js */; };
+		E1078A7F2BB8E21900C34E47 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = E1078A7E2BB8E21900C34E47 /* popup.html */; };
+		E1078A812BB8E21900C34E47 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = E1078A802BB8E21900C34E47 /* popup.css */; };
+		E1078A832BB8E21900C34E47 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = E1078A822BB8E21900C34E47 /* popup.js */; };
+		E1078A882BB8E21900C34E47 /* ChatGPT Message Counter 2.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E1078A6F2BB8E21900C34E47 /* ChatGPT Message Counter 2.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E1078A862BB8E21900C34E47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1078A512BB8E18F00C34E47 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1078A6E2BB8E21900C34E47;
+			remoteInfo = "ChatGPT Message Counter 2";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E1078A8C2BB8E21900C34E47 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E1078A882BB8E21900C34E47 /* ChatGPT Message Counter 2.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E1078A592BB8E18F00C34E47 /* MessageCounter2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageCounter2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1078A5C2BB8E18F00C34E47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E1078A5E2BB8E18F00C34E47 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E1078A602BB8E19100C34E47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E1078A632BB8E19100C34E47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E1078A652BB8E19100C34E47 /* MessageCounter2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MessageCounter2.entitlements; sourceTree = "<group>"; };
+		E1078A6F2BB8E21900C34E47 /* ChatGPT Message Counter 2.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ChatGPT Message Counter 2.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1078A712BB8E21900C34E47 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		E1078A742BB8E21900C34E47 /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _locales; sourceTree = "<group>"; };
+		E1078A762BB8E21900C34E47 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		E1078A782BB8E21900C34E47 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
+		E1078A7A2BB8E21900C34E47 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = background.js; sourceTree = "<group>"; };
+		E1078A7C2BB8E21900C34E47 /* content.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = content.js; sourceTree = "<group>"; };
+		E1078A7E2BB8E21900C34E47 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = popup.html; sourceTree = "<group>"; };
+		E1078A802BB8E21900C34E47 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
+		E1078A822BB8E21900C34E47 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
+		E1078A842BB8E21900C34E47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1078A852BB8E21900C34E47 /* ChatGPT_Message_Counter_2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChatGPT_Message_Counter_2.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E1078A562BB8E18F00C34E47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1078A6C2BB8E21900C34E47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E1078A502BB8E18F00C34E47 = {
+			isa = PBXGroup;
+			children = (
+				E1078A5B2BB8E18F00C34E47 /* MessageCounter2 */,
+				E1078A702BB8E21900C34E47 /* ChatGPT Message Counter 2 */,
+				E1078A5A2BB8E18F00C34E47 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E1078A5A2BB8E18F00C34E47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1078A592BB8E18F00C34E47 /* MessageCounter2.app */,
+				E1078A6F2BB8E21900C34E47 /* ChatGPT Message Counter 2.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1078A5B2BB8E18F00C34E47 /* MessageCounter2 */ = {
+			isa = PBXGroup;
+			children = (
+				E1078A5C2BB8E18F00C34E47 /* AppDelegate.swift */,
+				E1078A5E2BB8E18F00C34E47 /* ViewController.swift */,
+				E1078A602BB8E19100C34E47 /* Assets.xcassets */,
+				E1078A622BB8E19100C34E47 /* Main.storyboard */,
+				E1078A652BB8E19100C34E47 /* MessageCounter2.entitlements */,
+			);
+			path = MessageCounter2;
+			sourceTree = "<group>";
+		};
+		E1078A702BB8E21900C34E47 /* ChatGPT Message Counter 2 */ = {
+			isa = PBXGroup;
+			children = (
+				E1078A712BB8E21900C34E47 /* SafariWebExtensionHandler.swift */,
+				E1078A842BB8E21900C34E47 /* Info.plist */,
+				E1078A852BB8E21900C34E47 /* ChatGPT_Message_Counter_2.entitlements */,
+				E1078A732BB8E21900C34E47 /* Resources */,
+			);
+			path = "ChatGPT Message Counter 2";
+			sourceTree = "<group>";
+		};
+		E1078A732BB8E21900C34E47 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E1078A742BB8E21900C34E47 /* _locales */,
+				E1078A762BB8E21900C34E47 /* images */,
+				E1078A782BB8E21900C34E47 /* manifest.json */,
+				E1078A7A2BB8E21900C34E47 /* background.js */,
+				E1078A7C2BB8E21900C34E47 /* content.js */,
+				E1078A7E2BB8E21900C34E47 /* popup.html */,
+				E1078A802BB8E21900C34E47 /* popup.css */,
+				E1078A822BB8E21900C34E47 /* popup.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E1078A582BB8E18F00C34E47 /* MessageCounter2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1078A682BB8E19100C34E47 /* Build configuration list for PBXNativeTarget "MessageCounter2" */;
+			buildPhases = (
+				E1078A552BB8E18F00C34E47 /* Sources */,
+				E1078A562BB8E18F00C34E47 /* Frameworks */,
+				E1078A572BB8E18F00C34E47 /* Resources */,
+				E1078A8C2BB8E21900C34E47 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1078A872BB8E21900C34E47 /* PBXTargetDependency */,
+			);
+			name = MessageCounter2;
+			productName = MessageCounter2;
+			productReference = E1078A592BB8E18F00C34E47 /* MessageCounter2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E1078A6E2BB8E21900C34E47 /* ChatGPT Message Counter 2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1078A892BB8E21900C34E47 /* Build configuration list for PBXNativeTarget "ChatGPT Message Counter 2" */;
+			buildPhases = (
+				E1078A6B2BB8E21900C34E47 /* Sources */,
+				E1078A6C2BB8E21900C34E47 /* Frameworks */,
+				E1078A6D2BB8E21900C34E47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ChatGPT Message Counter 2";
+			productName = "ChatGPT Message Counter 2";
+			productReference = E1078A6F2BB8E21900C34E47 /* ChatGPT Message Counter 2.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E1078A512BB8E18F00C34E47 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					E1078A582BB8E18F00C34E47 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					E1078A6E2BB8E21900C34E47 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+				};
+			};
+			buildConfigurationList = E1078A542BB8E18F00C34E47 /* Build configuration list for PBXProject "MessageCounter2" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E1078A502BB8E18F00C34E47;
+			productRefGroup = E1078A5A2BB8E18F00C34E47 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1078A582BB8E18F00C34E47 /* MessageCounter2 */,
+				E1078A6E2BB8E21900C34E47 /* ChatGPT Message Counter 2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1078A572BB8E18F00C34E47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1078A612BB8E19100C34E47 /* Assets.xcassets in Resources */,
+				E1078A642BB8E19100C34E47 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1078A6D2BB8E21900C34E47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1078A7B2BB8E21900C34E47 /* background.js in Resources */,
+				E1078A812BB8E21900C34E47 /* popup.css in Resources */,
+				E1078A7F2BB8E21900C34E47 /* popup.html in Resources */,
+				E1078A772BB8E21900C34E47 /* images in Resources */,
+				E1078A792BB8E21900C34E47 /* manifest.json in Resources */,
+				E1078A752BB8E21900C34E47 /* _locales in Resources */,
+				E1078A7D2BB8E21900C34E47 /* content.js in Resources */,
+				E1078A832BB8E21900C34E47 /* popup.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E1078A552BB8E18F00C34E47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1078A5F2BB8E18F00C34E47 /* ViewController.swift in Sources */,
+				E1078A5D2BB8E18F00C34E47 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1078A6B2BB8E21900C34E47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1078A722BB8E21900C34E47 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E1078A872BB8E21900C34E47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1078A6E2BB8E21900C34E47 /* ChatGPT Message Counter 2 */;
+			targetProxy = E1078A862BB8E21900C34E47 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E1078A622BB8E19100C34E47 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1078A632BB8E19100C34E47 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E1078A662BB8E19100C34E47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E1078A672BB8E19100C34E47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		E1078A692BB8E19100C34E47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MessageCounter2/MessageCounter2.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92HEPEJ42Z;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Conor-Nolan.MessageCounter2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E1078A6A2BB8E19100C34E47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MessageCounter2/MessageCounter2.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92HEPEJ42Z;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Conor-Nolan.MessageCounter2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		E1078A8A2BB8E21900C34E47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "ChatGPT Message Counter 2/ChatGPT_Message_Counter_2.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92HEPEJ42Z;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ChatGPT Message Counter 2/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ChatGPT Message Counter 2";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Conor-Nolan.MessageCounter2.ChatGPT-Message-Counter-2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E1078A8B2BB8E21900C34E47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "ChatGPT Message Counter 2/ChatGPT_Message_Counter_2.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92HEPEJ42Z;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ChatGPT Message Counter 2/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ChatGPT Message Counter 2";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Conor-Nolan.MessageCounter2.ChatGPT-Message-Counter-2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E1078A542BB8E18F00C34E47 /* Build configuration list for PBXProject "MessageCounter2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1078A662BB8E19100C34E47 /* Debug */,
+				E1078A672BB8E19100C34E47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1078A682BB8E19100C34E47 /* Build configuration list for PBXNativeTarget "MessageCounter2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1078A692BB8E19100C34E47 /* Debug */,
+				E1078A6A2BB8E19100C34E47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1078A892BB8E21900C34E47 /* Build configuration list for PBXNativeTarget "ChatGPT Message Counter 2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1078A8A2BB8E21900C34E47 /* Debug */,
+				E1078A8B2BB8E21900C34E47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E1078A512BB8E18F00C34E47 /* Project object */;
+}
