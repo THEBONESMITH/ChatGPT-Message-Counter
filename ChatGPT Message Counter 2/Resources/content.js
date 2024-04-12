@@ -4,6 +4,19 @@ let typingTimer;
 let additionalCharactersTyped = 0;
 let sendButtonClicked = false;
 
+// Function to attach a listener to the 'Continue' button
+function attachContinueButtonListener() {
+    const continueButton = document.querySelector('button.btn');
+    if (continueButton) {
+        continueButton.addEventListener('click', () => {
+            console.log("[Log] Continue button clicked.");
+            incrementCounter();
+        });
+    } else {
+        console.warn("Continue button not found.");
+    }
+}
+
 // Function to attach a listener to the 'Save & Submit' button
 function attachSaveAndSubmitButtonListener() {
     // This selector targets the div containing 'Save & Submit' based on its text content
@@ -64,7 +77,7 @@ function checkTypingStatus() {
 
 // Function to increment the counter
 function incrementCounter() {
-    console.log('Counter incremented due to typing activity.');
+    console.log('Counter incremented.');
     chrome.runtime.sendMessage({incrementCount: true}, response => {
         if (chrome.runtime.lastError) {
             console.error('Error sending increment count message:', chrome.runtime.lastError);
