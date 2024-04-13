@@ -1,7 +1,3 @@
-let typingStartTime = 0;
-let lastTypingTime = 0;
-let typingTimer;
-let additionalCharactersTyped = 0;
 let sendButtonClicked = false;
 
 // Function to attach a listener to the 'Continue' button
@@ -46,6 +42,7 @@ function attachRegenerateButtonListener() {
     }
 }
 
+/*
 // Function to reset typing tracking
 function resetTypingTracking() {
     typingStartTime = 0;
@@ -53,7 +50,9 @@ function resetTypingTracking() {
     additionalCharactersTyped = 0;
     clearTimeout(typingTimer);
 }
+*/
 
+/*
 // Function to check typing status and decide on incrementing the counter
 function checkTypingStatus() {
     const now = Date.now();
@@ -74,6 +73,7 @@ function checkTypingStatus() {
         }
     }
 }
+*/
 
 // Function to increment the counter
 function incrementCounter() {
@@ -87,6 +87,7 @@ function incrementCounter() {
     });
 }
 
+/*
 // Set up event listener for typing activity
 document.addEventListener('input', event => {
     const now = Date.now();
@@ -99,6 +100,7 @@ document.addEventListener('input', event => {
 
     sendButtonClicked = false;
 });
+*/
 
 // Function to attach a listener to the send button
 function attachSendButtonListener() {
@@ -107,7 +109,6 @@ function attachSendButtonListener() {
         sendButton.addEventListener('click', () => {
             console.log("[Log] Send button clicked.");
             sendButtonClicked = true;
-            resetTypingTracking();
             // Directly increment the counter on send button click
             incrementCounter();
         });
