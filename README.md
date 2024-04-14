@@ -2,13 +2,13 @@
 
 ## Description
 
-The ChatGPT Message Counter is a sophisticated Safari Extension designed to help users monitor their messaging activity by counting the number of messages sent within a dynamic three-hour window. This tool employs smart detection mechanisms to estimate message sends, offering a unique approach to managing communication frequency.
+The ChatGPT Message Counter is a Safari Extension designed to help users keep track of their messaging activity by counting the number of messages sent using a dedicated send button within a dynamic three-hour window.
 
 ## Key Features
 
-- **Intelligent Message Detection**: Employs smart typing detection and send button click recognition to estimate message sends, enhancing reliability where direct send button clicks might not always be registered.
-- **Three-Hour Rolling Window**: Utilizes a rolling three-hour window for counting messages, providing continuous real-time updates without simply resetting every three hours.
-- **Persistent Memory**: Leverages persistent storage to maintain count accuracy, ensuring uninterrupted tracking of message counts even across browser restarts.
+- **Send Button Click Tracking**: Only counts messages sent via the send button, ensuring accuracy in tracking.
+- **Three-Hour Rolling Window**: Tracks messages within a continuously updating three-hour window, providing up-to-date message counts.
+- **Persistent Memory**: Uses persistent storage to keep count consistent even across browser restarts.
 
 ## Installation
 
@@ -19,24 +19,18 @@ The ChatGPT Message Counter is a sophisticated Safari Extension designed to help
 
 ## Usage
 
-After installation, the extension will automatically start tracking message activity. To view your message count:
+After installation, the extension automatically begins tracking messages sent via the send button. To view your message count:
 
 1. Click on the extension icon in the Safari toolbar.
-2. A popup will display the current count of messages sent in the last three hours and the time left until the counter updates.
-
-### Detailed Logic
-
-- **Typing vs. Pasting**: The extension differentiates between typing and pasting actions. While each pasting action counts as a single character, at least two characters need to be typed to qualify as a potential message send.
-- **Dynamic Three-Hour Tracking**: Instead of resetting every three hours, the counter updates based on a rolling window, ensuring that only messages sent within the last three hours are counted.
-- **Persistent Tracking Across Sessions**: The use of Chrome's local storage ensures that the message count remains accurate and persistent, even if the browser is restarted.
+2. A popup will display the current count of messages sent in the last three hours along with the time until the next update.
 
 ## Support and Feedback
 
-For support, questions, or feedback, please contact us at [Support Email](mailto:jumps_chip_0u@icloud.com). Your suggestions are valuable to us and help in continuously improving the extension.
+For support, questions, or feedback, please contact us at [Support Email](mailto:jumps_chip_0u@icloud.com). We value your feedback and are committed to continuously improving the extension.
 
 ## Contributing
 
-We welcome contributions to the ChatGPT Message Counter! Feel free to fork the repository, make your changes, and submit pull requests with your enhancements.
+We welcome contributions to the ChatGPT Message Counter! Please feel free to fork the repository, make your changes, and submit pull requests with your enhancements.
 
 ## License
 
