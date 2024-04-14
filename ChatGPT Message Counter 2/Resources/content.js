@@ -130,31 +130,5 @@ const observer = new MutationObserver(mutations => {
 });
 observer.observe(document.body, { childList: true, subtree: true });
 
-// Throttle function to limit the frequency of observer executions
-function throttle(func, limit) {
-    let lastFunc;
-    let lastRan;
-    return function() {
-        const context = this;
-        const args = arguments;
-        if (!lastRan) {
-            func.apply(context, args);
-            lastRan = Date.now();
-        } else {
-            clearTimeout(lastFunc);
-            lastFunc = setTimeout(function() {
-                if ((Date.now() - lastRan) >= limit) {
-                    func.apply(context, args);
-                    lastRan = Date.now();
-                }
-            }, limit - (Date.now() - lastRan));
-        }
-    }
-}
-
-const observer = new MutationObserver(throttle(mutations => {
-    // Event listener reattachment logic here
-}, 1000));
-
 // Clean up observer on page unload
 window.addEventListener('unload', () => observer.disconnect());
