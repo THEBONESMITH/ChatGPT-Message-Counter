@@ -75,9 +75,8 @@ function checkTypingStatus() {
 }
 */
 
-// Function to increment the counter
 function incrementCounter() {
-    console.log('Counter incremented.');
+    console.log('Counter incremented by:', new Error().stack);
     chrome.runtime.sendMessage({incrementCount: true}, response => {
         if (chrome.runtime.lastError) {
             console.error('Error sending increment count message:', chrome.runtime.lastError);
@@ -109,7 +108,6 @@ function attachSendButtonListener() {
         sendButton.addEventListener('click', () => {
             console.log("[Log] Send button clicked.");
             sendButtonClicked = true;
-            // Directly increment the counter on send button click
             incrementCounter();
         });
     } else {
@@ -123,11 +121,40 @@ attachRegenerateButtonListener();
 attachSaveAndSubmitButtonListener();
 
 const observer = new MutationObserver(mutations => {
-    attachSendButtonListener(); // Reattach listener for the send button
-    attachRegenerateButtonListener(); // Reattach listener for the regenerate button
-    attachSaveAndSubmitButtonListener(); // Reattach listener for the 'Save & Submit' button
+    // Ensure that previous listeners are removed
+    const sendButton = document.querySelector('button[data-testid="send-button"]');
+    if (sendButton) {
+        sendButton.removeEventListener('click', handleSendButtonClick);
+        sendButton.addEventListener('click', handleSendButtonClick);
+    }
 });
 observer.observe(document.body, { childList: true, subtree: true });
+
+// Throttle function to limit the frequency of observer executions
+function throttle(func, limit) {
+    let lastFunc;
+    let lastRan;
+    return function() {
+        const context = this;
+        const args = arguments;
+        if (!lastRan) {
+            func.apply(context, args);
+            lastRan = Date.now();
+        } else {
+            clearTimeout(lastFunc);
+            lastFunc = setTimeout(function() {
+                if ((Date.now() - lastRan) >= limit) {
+                    func.apply(context, args);
+                    lastRan = Date.now();
+                }
+            }, limit - (Date.now() - lastRan));
+        }
+    }
+}
+
+const observer = new MutationObserver(throttle(mutations => {
+    // Event listener reattachment logic here
+}, 1000));
 
 // Clean up observer on page unload
 window.addEventListener('unload', () => observer.disconnect());
